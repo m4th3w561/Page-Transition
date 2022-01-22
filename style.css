@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -141,7 +142,7 @@ nav img {
 .product-gallery {
     display: grid;
     padding: 0% 15%;
-    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
 }
 
@@ -152,11 +153,54 @@ nav img {
 }
 
 .price {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .card {
     padding: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .showcase {
+        flex-direction: column;
+        padding: 20%;
+        justify-content: space-evenly;
+        min-height: 85vh;
+    }
+
+    .image-container {
+        min-height: 30vh;
+        justify-content: center;
+        order: 1;
+    }
+    
+    .circle-3 {
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3);
+    }
+
+    .circle-1, 
+    .circle-2 {
+        display: none;
+    }
+
+    .showcase-title {
+        font-size: 1.5rem;
+    }
+
+    .showcase-subtitle {
+        font-size: 1rem;
+        padding: 2rem 0rem;
+    }
+
+    .showcase-text {
+        padding-bottom: 0;
+    }
+    .showcase-arrow{
+        right: 5%;
+        bottom: 50%;
+    }
 }
