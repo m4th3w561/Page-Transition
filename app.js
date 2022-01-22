@@ -9,9 +9,9 @@ const leaveAnimation = (current, done) => {
     const circles = current.querySelectorAll('.circle');
     const arrow = current.querySelector('.showcase-arrow');
     return (
-        tlLeave.fromTo(arrow, { opacity: 1, y: 0 }, { opacity: 0, y: 50, onComplete: done }),
-        tlLeave.fromTo(product, { y: 0, opacity: 1 }, { opacity: 0, y: 100 }, '<')
-    ),
+            tlLeave.fromTo(arrow, { opacity: 1, y: 0 }, { opacity: 0, y: 50, onComplete: done }),
+            tlLeave.fromTo(product, { y: 0, opacity: 1 }, { opacity: 0, y: 100 }, '<')
+        ),
         tlLeave.fromTo(text, { y: 0, opacity: 1 }, { opacity: 0, y: -100 }, '<'),
         tlLeave.fromTo(circles, { y: 0, opacity: 1 }, { opacity: 0, y: -200, stagger: 0.15, ease: 'back.out(1.7)', duration: 1 }, '<');
 };
@@ -36,19 +36,19 @@ barba.init({
     transitions: [{
         //showcase transitions
         name: 'default',
-        once (data) {
+        once(data) {
             const done = this.async();
             let next = data.next.container;
             let gradient = getGradient(data.next.namespace);
             gsap.set('body', { background: gradient });
             enterAnimation(next, done, gradient);
         },
-        leave (data) {
+        leave(data) {
             const done = this.async();
             let current = data.current.container;
             leaveAnimation(current, done);
         },
-        enter (data) {
+        enter(data) {
             const done = this.async();
             let next = data.next.container;
             let gradient = getGradient(data.next.namespace);
@@ -58,7 +58,7 @@ barba.init({
 });
 
 // changing gradient on showcase
-function getGradient (name) {
+function getGradient(name) {
     switch (name) {
         case "handbag":
             return "linear-gradient(260deg, #b75d62, #754d4f)";
